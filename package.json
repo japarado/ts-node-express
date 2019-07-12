@@ -1,0 +1,33 @@
+{
+    "name": "ts-node-express",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node dist/app/js",
+        "dev": "nodemon src/app.ts",
+        "build": "tsc -p .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/japarado/ts-node-express.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/japarado/ts-node-express/issues"
+    },
+    "homepage": "https://github.com/japarado/ts-node-express#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.0",
+        "@types/node": "^12.6.2",
+        "nodemon": "^1.19.1",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.5.3"
+    }
+}
