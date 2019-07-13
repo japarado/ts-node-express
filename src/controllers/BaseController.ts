@@ -1,38 +1,33 @@
 import { JsonController, Param, Body, Get, Post, Put, Delete } from "routing-controllers";
 
 @JsonController()
-class BaseController
+abstract class BaseController
 {
-    @Get("/posts")
-    index()
-    {
-        return "All Posts";
-    }
+  @Get("/posts")
+  index()
+  {
 
-    @Get("/posts/:id")
-    find(@Param('id') id: number)
-    {
-        return `Getting post with an ID of ${id}`;
-    }
+  }
 
-    @Post("/posts")
-    store(@Body() user: any)
-    {
-        return "Saving user";
-    }
+  @Get("/posts/:id")
+  find(@Param('id') id: number)
+  {
+  }
 
-    @Put("/posts/:id")
-    update(@Param('id') id: number, @Body() post: any)
-    {
-        return `Updating user with an ID of ${id}`;
-    }
+  @Post("/posts")
+  store(@Body() user: any)
+  {
+  }
 
-    @Delete("/posts/:id")
-    destroy(@Param("id") id: number)
-    {
-        return `Removing user with an ID of: ${id}`
-    }
+  @Put("/posts/:id")
+  update(@Param('id') id: number, @Body() post: any)
+  {
+  }
 
+  @Delete("/posts/:id")
+  destroy(@Param("id") id: number)
+  {
+  }
 }
 
 export default BaseController;
