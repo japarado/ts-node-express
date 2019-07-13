@@ -1,11 +1,12 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
+require('dotenv').config();
+import "reflect-metadata";
+import { createExpressServer } from "routing-controllers";
+import controllers from "./controllers/index";
+import { Application } from 'express'
 
-const app: Application = express();
+const app: Application = createExpressServer({
+    cors: true,
+    controllers: controllers
+})
 
-const add = (a: number, b: number): number => a + b;
-
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.send("Hello")
-});
-
-app.listen(5000,() => console.log("Server Running"))
+app.listen(process.env.PORT,() => console.log(`Server Running on port ${process.env.PORT}`))
